@@ -9,12 +9,12 @@ dotenv.config();
  * @author Alejandro Cerezo Lasne
  */
 export function createToken(user) {
-    const tokenPayload = {
-        name: user.name,
-        id: user.id,
-    };
-    const secret = process.env.SECRET;
-    return jwt.sign(tokenPayload, secret);
+  const tokenPayload = {
+    name: user.name,
+    id: user.id,
+  };
+  const secret = secret;
+  return jwt.sign(tokenPayload, secret);
 }
 
 /**
@@ -23,10 +23,10 @@ export function createToken(user) {
  * @returns
  */
 export function verifyToken(token) {
-    const secret = process.env.SECRET;
-    try {
-        return jwt.verify(token, secret);
-    } catch (error) {
-        return error.message;
-    }
+  const secret = secret;
+  try {
+    return jwt.verify(token, secret);
+  } catch (error) {
+    return error.message;
+  }
 }
